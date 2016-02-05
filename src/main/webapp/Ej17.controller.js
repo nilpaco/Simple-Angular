@@ -1,21 +1,33 @@
 angular.module('angular2App')
-    .controller('Ej17controller', function($scope, Equipo) {
-        $scope.equipo;
-        $scope.save = function (){
-            $scope.isSaving = true;
-            Equipo.save($scope.equipo, onSaveSuccess, onSaveError);
+    .controller('Ej17controller', function($scope, Equipo, Jugador) {
+        $scope.allJugadores;
+        $scope.jugadorSel;
+        $scope.equipos = Equipo.query();
+
+        $scope.cargarJugador = function(id){
+            Jugador.get({id: id},function(result){
+                $scope.jugadorSel = result;
+            });
         };
-        var onSaveSuccess = function (result) {
-            $scope.isSaving = true;
+        $scope.update = function(){
+            Jugador.update($scope.jugadorSel, updateOK);
         };
-        var onSaveError = function (result) {
-            $scope.isSaving = false;
-        };
+        var updateOK = function(){
+            $scope.allJugadores = Jugador.query();
+        }
     })
-    .factory("Equipo",function($resource){
-        return $resource('api/equipos/:id', {}, {
-            'save': {
-                method: 'POST',
+    .factory("Jugador",function($resource){
+        return $resource('api/jugadors/:id', {}, {
+            'query': { method: 'GET', isArray: true},
+            'get': {
+                method: 'GET',
+                transformResponse: function (data) {
+                    data = angular.fromJson(data);
+                    return data;
+                }
+            },
+            'update': {
+                method: 'PUT',
                 transformRequest: function (data) {
                     return angular.toJson(data);
                 }
