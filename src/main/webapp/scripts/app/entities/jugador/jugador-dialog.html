@@ -1,0 +1,70 @@
+
+<form name="editForm" role="form" novalidate ng-submit="save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="clear()">&times;</button>
+        <h4 class="modal-title" id="myJugadorLabel">Create or edit a Jugador</h4>
+    </div>
+    <div class="modal-body">
+        <jh-alert-error></jh-alert-error>
+        <div class="form-group">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="jugador.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" id="field_nombre"
+                    ng-model="jugador.nombre"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_fechaNacimiento">FechaNacimiento</label>
+            <input id="field_fechaNacimiento" type="text" class="form-control" uib-datepicker-popup="{{dateformat}}" ng-model="jugador.fechaNacimiento" is-open="datePickerForFechaNacimiento.status.opened"
+            />
+            <span class="input-group-btn">
+                <button type="button" class="btn btn-default" ng-click="datePickerForFechaNacimientoOpen($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+            </span>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_puntos">Puntos</label>
+            <input type="number" class="form-control" name="puntos" id="field_puntos"
+                    ng-model="jugador.puntos"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rebotes">Rebotes</label>
+            <input type="number" class="form-control" name="rebotes" id="field_rebotes"
+                    ng-model="jugador.rebotes"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_asistencias">Asistencias</label>
+            <input type="number" class="form-control" name="asistencias" id="field_asistencias"
+                    ng-model="jugador.asistencias"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_posicion">Posicion</label>
+            <input type="text" class="form-control" name="posicion" id="field_posicion"
+                    ng-model="jugador.posicion"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_equipo">equipo</label>
+            <select class="form-control" id="field_equipo" name="equipo" ng-model="jugador.equipo" ng-options="equipo as equipo.nombre for equipo in equipos track by equipo.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

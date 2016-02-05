@@ -1,0 +1,9 @@
+<div ng-init="getJ()">
+    Equipo id: <input type="text" ng-model="id_Equipo" ng-change="getJ()"/>
+    <ul>
+        <li ng-repeat="jugador in jugadores">
+            {{ jugador.nombre + ', ' + jugador.posicion + ', ' + jugador.equipo.nombre }}
+        </li>
+    </ul>
+
+</div>

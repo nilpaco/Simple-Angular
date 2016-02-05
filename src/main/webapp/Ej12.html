@@ -1,0 +1,28 @@
+
+<div>
+    <h1>Jugadores</h1>
+    <table class="table table-striped">
+        <th>
+            Nombre
+        </th>
+        <th>Puntos</th>
+        <th>Rebotes</th>
+        <th>Asistencias</th>
+        <th>Posicion</th>
+        <th>Fecha Nacimiento</th>
+        <th>Equipo</th>
+
+        <tr ng-repeat="jugador in jugadores" ng-show="jugador.puntos > 500 && jugador.puntos != undefined">
+            <td>{{jugador.nombre}}</td>
+            <td>{{jugador.puntos}}</td>
+            <td>{{jugador.rebotes}}</td>
+            <td>{{jugador.asistencias}}</td>
+            <td>{{jugador.posicion}}</td>
+            <td>{{jugador.fechaNacimiento}}</td>
+            <td>{{ jugador.equipo.nombre }}</td>
+        </tr>
+    </table>
+
+
+</div>
+

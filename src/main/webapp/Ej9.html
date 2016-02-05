@@ -1,0 +1,37 @@
+
+<div>
+<h1>Jugadores</h1>
+        <table class="table table-striped">
+            <th ng-click="orderByMe('nombre')">
+                Nombre
+            </th>
+            <th ng-click="orderByMe('puntos')">Puntos</th>
+            <th ng-click="orderByMe('rebotes')">Rebotes</th>
+            <th ng-click="orderByMe('asistencias')">Asistencias</th>
+            <th ng-click="orderByMe('posicion')">Posicion</th>
+            <th ng-click="orderByMe('fechaNacimiento')">Fecha Nacimiento</th>
+            <th>Equipo</th>
+            <div ng-init="jugador">
+                <label>Search: <input ng-model="searchText" class="form-control"></label>
+                <tr ng-repeat="jugador in jugadores | filter:searchText | orderBy:myOrderBy">
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.nombre }}</td>
+                    <td ng-if="$even">{{jugador.nombre}}</td>
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.puntos }}</td>
+                    <td ng-if="$even">{{jugador.puntos}}</td>
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.rebotes }}</td>
+                    <td ng-if="$even">{{jugador.rebotes}}</td>
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.asistencias }}</td>
+                    <td ng-if="$even">{{jugador.asistencias}}</td>
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.posicion }}</td>
+                    <td ng-if="$even">{{jugador.posicion}}</td>
+                    <td ng-if="$odd" style="background-color:#607D8B">{{ jugador.fechaNacimiento }}</td>
+                    <td ng-if="$even">{{jugador.fechaNacimiento}}</td>
+                    <td>{{ jugador.equipo.nombre }}</td>
+                </tr>
+            </div>
+        </table>
+
+
+</div>
+
+<style></style>
