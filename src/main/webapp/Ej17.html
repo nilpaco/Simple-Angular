@@ -1,23 +1,25 @@
 
 <div ng-cloak>
     <h1>Crear Jugador: </h1>
-    Jugadores: <select ng-model="selected" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required">
-    <option value=""></option>
-    <option ng-repeat="jugador in allJugadores" value="{{jugador.id}}">{{jugador.nombre}}</option>
-</select>
+    Jugadores:
+    <select ng-model="selected" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required">
+        <option value=""></option>
+        <option ng-repeat="jugador in allJugadores" value="{{jugador.id}}">{{jugador.nombre}}</option>
+    </select>
+    <input type="submit" ng-click="cargarJugador(selected)" class="btn btn-info">
     <form name="formJugador" ng-submit="update()">
         <div class="row">
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input ng-model="jugadorSel.nombre" ng-model="jugador.nombre" type="text" class="form-control" id="nombre" required>
+                    <input ng-model="jugadorSel.nombre" ng-model="jugadorSel.nombre" type="text" class="form-control" id="nombre" required>
                     <span ng-show="formJugador.nombre.$touched && formJugador.nombre.$invalid">El nombre es requerido</span><br/>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="form-group">
                     <label for="fecha">Fecha Nacimiento:</label>
-                    <input ng-model="jugador.fechaNacimiento" type="date" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="fecha" required>
+                    <input ng-model="jugadorSel.fechaNacimiento" type="date" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="fecha" required>
                     <span ng-show="formJugador.fechaNacimiento.$touched && formJugador.fechaNacimiento.$invalid">Fecha nacimiento requerida</span><br/>
                 </div>
             </div>
@@ -26,19 +28,19 @@
             <div class="col-lg-4">
                 <div class="form-group">
                     <label for="punt">Puntos:</label>
-                    <input ng-model="jugador.puntos" type="number" class="form-control" id="punt" required>
+                    <input ng-model="jugadorSel.puntos" type="number" class="form-control" id="punt" required>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label for="reb">Rebotes:</label>
-                    <input ng-model="jugador.rebotes" type="number" class="form-control" id="reb" required>
+                    <input ng-model="jugadorSel.rebotes" type="number" class="form-control" id="reb" required>
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="form-group">
                     <label for="as">Asistencias:</label>
-                    <input ng-model="jugador.asistencias" type="number" class="form-control" id="as" required>
+                    <input ng-model="jugadorSel.asistencias" type="number" class="form-control" id="as" required>
                 </div>
             </div>
         </div>
@@ -46,7 +48,7 @@
             <div class="col-lg-12">
                 <div class="form-group">
                     <label for="pos">Posicion:</label>
-                    <input ng-model="jugador.posicion" type="text" class="form-control" id="pos" required>
+                    <input ng-model="jugadorSel.posicion" type="text" class="form-control" id="pos" required>
                 </div>
             </div>
         </div>

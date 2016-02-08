@@ -1,6 +1,8 @@
+
+'use strict'
 angular.module('angular2App')
-    .controller('Ej17controller', function($scope, Equipo, Jugador) {
-        $scope.allJugadores;
+    .controller('Ej17controller', function($scope, Jugador, Equipo, entity) {
+        $scope.allJugadores = entity;
         $scope.jugadorSel;
         $scope.equipos = Equipo.query();
 

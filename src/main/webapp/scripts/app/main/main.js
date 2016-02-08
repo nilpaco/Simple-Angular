@@ -122,6 +122,9 @@ angular.module('angular2App')
                     }
                 },
                 resolve: {
+                    entity: ['$stateParams', 'Jugador', function ($stateParams, Jugador) {
+                        return Jugador.query();
+                    }]
                 }
             });
     });
