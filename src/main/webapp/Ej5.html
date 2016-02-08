@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+<p>Ordenado por nombre:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'nombre'">
+    {{ x.nombre + ', ' + x.puntos }}
+  </li>
+</ul>
+
+<p>Ordenado por puntos:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'puntos'">
+    {{ x.nombre + ', ' + x.puntos }}
+  </li>
+</ul>
+
+<p>Ordenado por posicion:</p>
+<ul>
+  <li ng-repeat="x in jugadores | orderBy:'fecha'">
+    {{ x.nombre + ', ' + x.fecha }}
+  </li>
+</ul>
+
+
+</div>
+
+<script>
+angular.module('myApp', []).controller('namesCtrl', function($scope) {
+    $scope.jugadores = [
+    {nombre:'Jani', fecha: '2013-10-21T22:00:00.000Z', puntos:1000, rebotes: 100, asistencias: 199, posicion: 'Base'},
+    {nombre:'Cristian', fecha: '2014-10-21T22:00:00.000Z', puntos:200, rebotes: 30, asistencias: 359, posicion: 'Pivot'},
+    {nombre:'Jhonny', fecha: '2015-10-21T22:00:00.000Z', puntos:300, rebotes: 600, asistencias: 480, posicion: 'Escolta'},
+    {nombre:'Manu', fecha: '2013-11-21T22:00:00.000Z', puntos:500, rebotes: 450, asistencias: 9, posicion: 'Alero'}
+  ];
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugadores=[
+{nombre:'Jani', fecha: '2013-10-21T22:00:00.000Z', puntos:'100', rebotes: '100', asistencias: '199', posicion: 'Base'},
+{nombre:'Cristian', fecha: '2013-10-21T22:00:00.000Z', puntos:'200', rebotes: '300', asistencias: '359', posicion: 'Pivot'},
+{nombre:'Jhonny', fecha: '2013-10-21T22:00:00.000Z', puntos:'300', rebotes: '600', asistencias: '480', posicion: 'Escolta'},
+{nombre:'Manu', fecha: '2013-10-21T22:00:00.000Z', puntos:'500', rebotes: '450', asistencias: '9', posicion: 'Alero'}
+]">
+
+<p>Looping with objects:</p>
+<ul>
+  <li ng-repeat="x in jugadores">
+  {{ x.nombre + ', ' + x.fecha + ', ' + x.puntos + ', ' + x.rebotes + ', ' + x.asistencias + ', ' + x.posicion }}</li>
+</ul>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<div ng-app="" ng-init="jugador={nombre:'John',fecha: '2013-10-21T22:00:00.000Z', puntos: '100', rebotes: '100', asistencias: '100', posicion: 'Base'}">
+
+  <div>
+    Datos Jugador:
+    <p>Nombre: {{jugador.nombre}}</p>
+    <p>Fecha: {{jugador.fecha}}</p>
+    <p>Puntos: {{jugador.puntos}}</p>
+    <p>Rebotes: {{jugador.rebotes}}</p>
+    <p>Asistencias: {{jugador.asistencias}}</p>
+    <p>{{jugador.posicion}}</p>
+  </div>
+
+</div>
+
+</body>
+</html>

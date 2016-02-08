@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<body>
+
+<p>Try to change the names.</p>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>Introduce los campos del jugador:</p>
+<p>Nombre: <input type="text" ng-model="nombre"></p>
+<p>Fecha: <input type="date" ng-model="fecha"></p>
+<p>Puntos: <input type="number" ng-model="puntos"></p>
+<p>Rebotes: <input type="number" ng-model="rebotes"></p>
+<p>Asistencias: <input type="number" ng-model="asistencias"></p>
+<p>Posicion: <input type="text" ng-model="posicion"></p>
+<div>
+  Datos Jugador:
+  <p>Nombre: {{nombre}}</p>
+  <p>Fecha: {{fecha}}</p>
+  <p>Puntos: {{puntos}}</p>
+  <p>Rebotes: {{rebotes}}</p>
+  <p>Asistencias: {{asistencias}}</p>
+  <p>{{posicion}}</p>
+</div>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+    $scope.nombre= "John";
+    $scope.fecha= new Date(2013, 9, 22);
+    $scope.puntos= 100;
+    $scope.puntos= 100;
+    $scope.rebotes= 100;
+    $scope.asistencias= 100;
+    $scope.posicion= "Base";
+
+});
+</script>
+
+</body>
+</html>
